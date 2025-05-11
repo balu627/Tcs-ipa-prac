@@ -1,0 +1,60 @@
+Design a library system with two classes: Book and Library. Use ArrayList, HashSet, and HashMap to manage books and author information.
+
+Classes and Methods:
+1. Book
+Attributes:
+
+bookId (int): Unique ID for the book.
+title (String): Title of the book.
+author (String): Author of the book.
+Methods:
+
+Constructor to initialize bookId, title, and author.
+toString() to return a string representation of the book.
+2. Library
+Attributes:
+
+books (ArrayList): To store the list of books.
+uniqueBooks (HashSet): To avoid duplicate books by tracking book IDs.
+authorCount (HashMap): To store the count of books by each author.
+Methods:
+
+addBook(Book book): Adds a book to the library if it’s not a duplicate.
+removeBook(int bookId): Removes a book by its ID.
+displayBooks(): Displays all books in the library.
+displayAuthorCount(): Displays the count of books by each author.
+
+Sample Input and Output:
+
+Input:
+
+Library library = new Library();
+
+// Add books
+library.addBook(new Book(1, "Java Basics", "John Doe"));
+library.addBook(new Book(2, "Advanced Java", "John Doe"));
+library.addBook(new Book(3, "Data Structures", "Jane Smith"));
+library.addBook(new Book(1, "Java Basics", "John Doe")); // Duplicate
+
+// Remove a book
+library.removeBook(2);
+
+// Display books and author count
+library.displayBooks();
+library.displayAuthorCount();
+
+Output:
+
+Book added: Java Basics
+Book added: Advanced Java
+Book added: Data Structures
+Duplicate book not added: Java Basics
+	: Advanced Java
+
+Books in Library:
+Book ID: 1, Title: Java Basics, Author: John Doe
+Book ID: 3, Title: Data Structures, Author: Jane Smith
+
+Author Count:
+John Doe: 1
+Jane Smith: 1
