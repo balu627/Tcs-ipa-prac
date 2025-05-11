@@ -57,7 +57,8 @@ class Library{
                     authorcount.put(Books.get(i).getauthor(),authorcount.get(Books.get(i).getauthor())-1);
                 }
                 else{
-                    authorcount.put(Books.get(i).getauthor(),authorcount.get(Books.get(i).getauthor())-1);
+                    // authorcount.put(Books.get(i).getauthor(),authorcount.get(Books.get(i).getauthor())-1);
+                     authorcount.remove(Books.get(i).getauthor());
                     uniqueBooks.remove(Books.get(i).getbookId());
                 }
                 System.out.println("Book removed:"+Books.get(i).gettitle());
