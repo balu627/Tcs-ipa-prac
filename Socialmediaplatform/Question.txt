@@ -1,0 +1,89 @@
+Design a social media system where users can create posts, like posts, and comment on posts. The system uses ArrayList to store posts, HashSet to store unique users who liked a post, and HashMap to track the number of comments per post.
+
+Classes and Methods:
+1. Post Class:
+
+Attributes:
+
+postId (int): Unique ID for the post.
+content (String): Content of the post.
+likes (HashSet<String>): Set of user names who liked the post.
+comments (ArrayList<String>): List of comments on the post.
+Methods:
+
+addLike(String userName): Adds a like to the post by a user.
+addComment(String comment): Adds a comment to the post.
+
+2. SocialMediaPlatform Class:
+
+Attributes:
+
+posts (ArrayList<Post>): List of all posts on the platform.
+postCommentsCount (HashMap<Integer, Integer>): Maps post IDs to the number of comments on each post.
+Methods:
+
+createPost(String content): Creates a new post and adds it to the platform.
+getPostDetails(int postId): Displays the content, likes, and comments of a specific post.
+Sample Input and Output:
+Input:
+
+SocialMediaPlatform platform = new SocialMediaPlatform();
+
+// Create posts
+platform.createPost("Welcome to my first post!");
+platform.createPost("Had a great day!");
+
+// Add likes and comments
+platform.posts.get(0).addLike("Alice");
+platform.posts.get(0).addLike("Bob");
+platform.posts.get(0).addComment("Nice post!");
+platform.posts.get(0).addComment("Looking forward to more!");
+
+platform.posts.get(1).addLike("Charlie");
+platform.posts.get(1).addComment("Awesome day!");
+
+platform.getPostDetails(1);
+platform.getPostDetails(0);
+Output:
+
+Post ID: 1
+Content: Had a great day!
+Likes: [Charlie]
+Comments: [Awesome day!]
+
+Post ID: 0
+Content: Welcome to my first post!
+Likes: [Alice, Bob]
+Comments: [Nice post!, Looking forward to more!]
+
+
+
+Input Format Idea:
+1️⃣ First line: Number of posts
+2️⃣ Next n lines: Each line is a post content
+3️⃣ Next line: Number of likes
+4️⃣ Next likes lines:
+
+Post ID
+
+UserName
+
+5️⃣ Next line: Number of comments
+6️⃣ Next comments lines:
+
+Post ID
+
+Comment
+
+
+2
+Welcome to my first post!
+Had a great day!
+3
+0 Alice
+0 Bob
+1 Charlie
+3
+0 Nice post!
+0 Looking forward to more!
+1 Awesome day!
